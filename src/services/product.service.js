@@ -18,7 +18,7 @@ class ProductsService {
     const options = {
       include: ['category'],
       where: {}
-    }
+    };
     const { limit, offset } = query;
     if (limit && offset) {
       options.limit =  limit;
