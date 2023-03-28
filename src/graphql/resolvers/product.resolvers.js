@@ -1,4 +1,4 @@
-const ProductsService = require('./../services/product.service');
+const ProductsService = require('../../services/product.service');
 const service = new ProductsService();
 
 const product = (_, { id }) => {

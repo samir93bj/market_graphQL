@@ -1,4 +1,4 @@
-const CategoryService = require('./../services/category.service');
+const CategoryService = require('../../services/category.service');
 const service = new CategoryService();
 
 const category = async (_, {id}) => {

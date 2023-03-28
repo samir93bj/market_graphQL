@@ -1,0 +1,15 @@
+type Query {
+  category(id: ID): Category
+  allCategory: [Category]
+}
+
+type Category {
+  id: String!,
+  name: String!,
+  image: String!
+}
+
+type CreateCategory {
+  name: String!,
+  image: String!
+}

@@ -3,7 +3,6 @@ const { allCategory, category } = require('./category.resolvers');
 
 const resolvers = {
   Query: {
-    hello: () => 'Hola mundo',
     product,
     allProduct,
     category,

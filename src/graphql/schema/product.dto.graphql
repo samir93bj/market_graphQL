@@ -1,14 +1,7 @@
 type Query {
-  hello: String
-  getPersons(name: String!, edad: Int!): String
-
   #products
   product(id: ID!): Product!
   allProduct: [Product]
-
-  #Categories
-  category(id: ID): Category
-  allCategory: [Category]
 }
 
 type Mutation {
@@ -23,7 +16,9 @@ type Product {
   price: Float!,
   description: String!,
   image: String!,
-  createdAt: String!
+  createdAt: String!,
+  categoryId: ID!,
+  category: Category!,
 }
 
 input CreateProductInput {
@@ -43,11 +38,7 @@ input UpdateProductInput {
 }
 
 type Category {
-  name: String!,
-  image: String!
-}
-
-type CreateCategory {
+  id: String!,
   name: String!,
   image: String!
 }
