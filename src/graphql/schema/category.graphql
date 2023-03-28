@@ -10,7 +10,8 @@ type Mutation {
 type Category {
   id: String!,
   name: String!,
-  image: String!
+  image: String!,
+  products: [Product!]
 }
 
 type CreateCategory {
@@ -21,6 +22,17 @@ type CreateCategory {
 input CreateCategoryInput {
   name: CategoryNameType!,
   image: URL!
+}
+
+type Product {
+  id: String!,
+  name: String!,
+  price: Float!,
+  description: String!,
+  image: String!,
+  createdAt: String!,
+  categoryId: ID!,
+  category: Category!,
 }
 
 scalar CategoryNameType

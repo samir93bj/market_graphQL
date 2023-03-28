@@ -1,4 +1,4 @@
-const { allProduct, product, addProduct, updateProduct, deleteProduct } = require('./product.resolvers');
+const { allProduct, product, addProduct, updateProduct, deleteProduct, getProductByCategory } = require('./product.resolvers');
 const { allCategory, category, addCategory } = require('./category.resolvers');
 const { login } = require('./auth.resolvers');
 const { RegularExpression } = require('graphql-scalars');
@@ -19,7 +19,10 @@ const resolvers = {
     deleteProduct,
     addCategory
   },
-  CategoryNameType
+  CategoryNameType,
+  Category: {
+    products: getProductByCategory
+  }
 };
 
 module.exports = resolvers;
