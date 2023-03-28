@@ -1,12 +1,22 @@
 type Query {
   hello: String
   getPersons(name: String!, edad: Int!): String
+
+  #products
   product(id: ID!): Product!
   allProduct: [Product]
+  updateProduct(id: ID!): Product
+  deleteProduct(id: ID!): ID
+
+  #Categories
+  category(id: ID): Category
+  allCategory: [Category]
 }
 
 type Mutation {
   addProduct(dto: CreateProductInput!): Product
+  updateProduct(id: ID!, dto: UpdateProductInput!): Product
+  deleteProduct(id: ID!): ID
 }
 
 type Product {
@@ -24,4 +34,22 @@ input CreateProductInput {
   description: String!,
   image: String!,
   categoryId: ID!
+}
+
+input UpdateProductInput {
+  name: String,
+  price: Int,
+  description: String,
+  image: String,
+  categoryId: ID
+}
+
+type Category {
+  name: String!,
+  image: String!
+}
+
+type CreateCategory {
+  name: String!,
+  image: String!
 }
