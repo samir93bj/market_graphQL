@@ -6,6 +6,13 @@ class CategoryService {
   constructor(){
   }
   async create(data) {
+
+    const category = await models.Category.findOne({ where: { name: data.name }} );
+
+    if (!category) {
+      throw boom.notFound('Category already exists');
+    };
+
     const newCategory = await models.Category.create(data);
     return newCategory;
   }
