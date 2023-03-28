@@ -9,7 +9,7 @@ class CategoryService {
 
     const category = await models.Category.findOne({ where: { name: data.name }} );
 
-    if (!category) {
+    if (category) {
       throw boom.notFound('Category already exists');
     };
 

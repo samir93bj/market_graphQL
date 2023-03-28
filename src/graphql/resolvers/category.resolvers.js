@@ -19,9 +19,12 @@ const addCategory = async (_, {dto}, context) => {
     throw boom.unauthorized('jwt is not valid');
   }
 
-  checkRolesGql(user, 'admin');
+  checkRolesGql(user, 'admin') ;
 
-  return service.create(dto);
+  return service.create({
+    ...dto,
+    image: dto.image.href
+  });
 };
 
 module.exports = {

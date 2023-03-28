@@ -15,10 +15,12 @@ type Category {
 
 type CreateCategory {
   name: String!,
-  image: String!
+  image: URL!
 }
 
 input CreateCategoryInput {
-  name: String!,
-  image: String!
+  name: CategoryNameType!,
+  image: URL!
 }
+
+scalar CategoryNameType
